@@ -1,0 +1,13 @@
+name: Test
+
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Test
+        env:
+          TEST_SECRET: ${{ secrets.NODE_ENV }}
+        run: |
+          echo ${#TEST_SECRET}
